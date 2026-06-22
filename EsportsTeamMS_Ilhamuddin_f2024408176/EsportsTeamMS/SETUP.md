@@ -240,7 +240,7 @@ DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT_REF].supabase.co:5432/
 
 ## ☁️ Deploy to Production
 
-### Backend → Render
+### Backend → Railway
 
 1. **Push to GitHub**
    ```bash
@@ -249,22 +249,28 @@ DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT_REF].supabase.co:5432/
    git push origin main
    ```
 
-2. **Create Render Service**
-   - Go to https://render.com
-   - Click "New +" → "Web Service"
-   - Connect your GitHub repo
-   - Set:
-     - **Build Command:** `pip install -r requirements.txt`
-     - **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-   - Add Environment Variables:
-     - `DATABASE_URL`: Your Supabase connection string
+2. **Create Railway Project**
+   - Go to https://railway.app
+   - Sign in with GitHub
+   - Click "New Project" → "Deploy from GitHub repo"
+   - Select your repository
+   - Railway automatically detects Python project
 
-3. **Deploy**
-   - Click "Create Web Service"
-   - Wait for build to complete
-   - Copy the deployment URL (e.g., `https://esportsms.onrender.com`)
+3. **Configure Environment Variables**
+   - In Railway dashboard, click on your project
+   - Go to **Variables** tab
+   - Add:
+     - `DATABASE_URL`: Your Supabase PostgreSQL connection string
+     - `SECRET_KEY`: A secure random string
+     - `ALGORITHM`: `HS256`
+   - Railway automatically manages the PORT
 
-### Frontend → Netlify
+4. **Deploy**
+   - Railway builds using `requirements.txt`
+   - Wait for deployment to complete
+   - Copy the deployment URL from the Railway dashboard (e.g., `https://esportsms-production.up.railway.app`)
+
+### Frontend → Vercel
 
 1. **Push Frontend to GitHub**
    ```bash
@@ -276,15 +282,20 @@ DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT_REF].supabase.co:5432/
 2. **Update API URL**
    - Open `frontend/script.js`
    - Find: `const API_URL = "http://localhost:8000"`
-   - Change to: `const API_URL = "https://esportsms.onrender.com"`
+   - Change to: `const API_URL = "https://esportsms-production.up.railway.app"` (use your Railway URL)
    - Push changes
 
-3. **Deploy on Netlify**
-   - Go to https://netlify.com
-   - Connect GitHub repo
-   - Set Publish Directory: `frontend/`
+3. **Deploy on Vercel**
+   - Go to https://vercel.com
+   - Sign in with GitHub
+   - Click "Add New" → "Project"
+   - Import your repository
+   - Set:
+     - **Root Directory:** `frontend`
+     - **Framework:** None (static site)
    - Click "Deploy"
-   - Get live URL (e.g., `https://esportsms.netlify.app`)
+   - Vercel automatically deploys
+   - Get live URL (e.g., `https://esportsms.vercel.app`)
 
 ---
 
@@ -383,8 +394,8 @@ Use browser DevTools (F12) → Toggle Device Toolbar
 - **FastAPI Docs:** https://fastapi.tiangolo.com
 - **SQLAlchemy:** https://www.sqlalchemy.org
 - **Supabase:** https://supabase.com/docs
-- **Render Deployment:** https://render.com/docs
-- **Netlify:** https://docs.netlify.com
+- **Railway Deployment:** https://railway.app/docs
+- **Vercel:** https://vercel.com/docs
 
 ---
 

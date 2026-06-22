@@ -31,7 +31,7 @@ DATABASE_URL = os.getenv(
 # Supabase PostgreSQL URL format:
 # postgresql://postgres:[YOUR_PASSWORD]@db.[YOUR_PROJECT_REF].supabase.co:5432/postgres
 
-# Fix for Render + Supabase: replace postgres:// with postgresql://
+# Fix for Railway + Supabase: replace postgres:// with postgresql://
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
