@@ -161,8 +161,8 @@ Authentication:
 - bcrypt (Password hashing)
 
 Deployment:
-- Railway (Backend)
-- Vercel (Frontend)
+- Render (Backend)
+- Netlify (Frontend)
 - Supabase (Database)
 
 Development Tools:
@@ -376,7 +376,7 @@ Suggested improvements for Phase 3+:
 For issues or questions during evaluation:
 1. Refer to SETUP.md for local setup
 2. Check browser console (F12) for errors
-3. Check Railway logs for backend errors
+3. Check Render logs for backend errors
 4. Verify database connection in Supabase
 
 ---

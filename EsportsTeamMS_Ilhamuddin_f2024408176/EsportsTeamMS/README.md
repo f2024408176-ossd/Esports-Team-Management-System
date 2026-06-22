@@ -47,8 +47,8 @@ EsportsTeamMS/
 | Database    | PostgreSQL (Supabase)    |
 | ORM         | SQLAlchemy               |
 | Auth        | JWT (PyJWT + bcrypt)     |
-| Hosting     | Railway (backend)        |
-| Frontend    | Vercel                   |
+| Hosting     | Render (backend)         |
+| Frontend    | Netlify                  |
 | DB Hosting  | Supabase                 |
 
 ---
@@ -178,21 +178,21 @@ Once the backend is running, visit:
 
 ## ☁️ Deployment
 
-### Backend → Railway
+### Backend → Render
 1. Push code to GitHub
-2. Go to [railway.app](https://railway.app) and connect GitHub
-3. Create new project and select your repository
-4. Railway auto-detects Python and reads `requirements.txt`
-5. Add environment variables:
+2. Go to [render.com](https://render.com) and connect GitHub
+3. Create a new Web Service and select your repository
+4. Set Build Command: `pip install -r requirements.txt`
+5. Set Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+6. Add environment variables:
    - `DATABASE_URL` = your Supabase PostgreSQL URL
-   - `SECRET_KEY` = secure random string
-6. Deploy (Railway handles the rest)
+7. Deploy
 
-### Frontend → Vercel
+### Frontend → Netlify
 1. Push frontend folder to GitHub
-2. Go to [vercel.com](https://vercel.com) and import repository
-3. Set root directory to `frontend/`
-4. Update API_URL in script.js to your Railway backend URL
+2. Go to [netlify.com](https://netlify.com) and connect repository
+3. Set Publish Directory to `frontend/`
+4. Update API_URL in `script.js` to your Render backend URL
 5. Deploy
 
 ### Database → Supabase
