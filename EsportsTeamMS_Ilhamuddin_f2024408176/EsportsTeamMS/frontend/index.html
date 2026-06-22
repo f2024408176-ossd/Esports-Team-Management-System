@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esports Team Management System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">ESPORTS<span>MS</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="manage.html">Manage</a></li>
+    <li><a href="login.html" class="nav-btn">Login</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">🏆 Professional Esports Platform</span>
+    <h1>Manage Your <span class="highlight">Esports Team</span> Like a Pro</h1>
+    <p>A centralized platform for esports organizations to manage players, tournaments, matches, training sessions, and performance analytics — all in one place.</p>
+    <div class="hero-btns">
+      <a href="login.html" class="btn btn-primary btn-lg">🚀 Get Started</a>
+      <a href="about.html" class="btn btn-secondary btn-lg">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="num">20+</div><div class="label">API Endpoints</div></div>
+      <div class="stat-item"><div class="num">6</div><div class="label">DB Tables</div></div>
+      <div class="stat-item"><div class="num">9</div><div class="label">Frontend Pages</div></div>
+      <div class="stat-item"><div class="num">100%</div><div class="label">Full Stack</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" style="background: var(--dark2);">
+  <div class="section-header">
+    <span class="section-tag">Core Features</span>
+    <h2>Everything You Need to <span style="color:var(--primary)">Dominate</span></h2>
+    <p>Powerful tools designed specifically for esports organizations of all sizes.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="grid-3" style="max-width:1100px;margin:0 auto;">
+    <div class="card">
+      <div class="feature-icon">🎮</div>
+      <h3>Team Management</h3>
+      <p>Create and manage multiple esports teams, assign coaches, and track team details in real time.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">👤</div>
+      <h3>Player Management</h3>
+      <p>Register players, maintain gamer profiles, assign roles, and monitor individual performance stats.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">🏆</div>
+      <h3>Tournament Tracking</h3>
+      <p>Add tournaments, set prize pools, track dates, and monitor your team's tournament journey.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">⚔️</div>
+      <h3>Match Scheduling</h3>
+      <p>Schedule upcoming matches, record results, view full match history, and analyze win rates.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">📅</div>
+      <h3>Training Sessions</h3>
+      <p>Plan and track practice schedules, focus areas, durations, and team training attendance.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">📊</div>
+      <h3>Analytics Dashboard</h3>
+      <p>Visual insights on team performance, win/loss ratios, player stats, and tournament progress.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">🔐</div>
+      <h3>Secure Auth</h3>
+      <p>JWT-based authentication with role-based access control for managers, coaches, and players.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">🔍</div>
+      <h3>Search & Filter</h3>
+      <p>Quickly search players, filter matches by result, and find tournaments by date or location.</p>
+    </div>
+    <div class="card">
+      <div class="feature-icon">☁️</div>
+      <h3>Cloud Deployed</h3>
+      <p>Backend on Render, frontend on Netlify, and database hosted on Supabase PostgreSQL.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Workflow</span>
+    <h2>How It <span style="color:var(--secondary)">Works</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="grid-4" style="max-width:1000px;margin:0 auto;text-align:center;">
+    <div>
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;margin:0 auto 1rem;">1</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-weight:600;margin-bottom:.4rem;">Register</h3>
+      <p style="color:var(--muted);font-size:.88rem;">Create your manager account and set up your organization profile.</p>
+    </div>
+    <div>
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,var(--secondary),var(--primary));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;margin:0 auto 1rem;">2</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-weight:600;margin-bottom:.4rem;">Add Teams</h3>
+      <p style="color:var(--muted);font-size:.88rem;">Create your esports teams and assign coaches and game titles.</p>
+    </div>
+    <div>
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,var(--accent),var(--primary));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;margin:0 auto 1rem;">3</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-weight:600;margin-bottom:.4rem;">Manage</h3>
+      <p style="color:var(--muted);font-size:.88rem;">Add players, schedule matches, join tournaments, plan training.</p>
+    </div>
+    <div>
+      <div style="width:60px;height:60px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;margin:0 auto 1rem;">4</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-weight:600;margin-bottom:.4rem;">Analyze</h3>
+      <p style="color:var(--muted);font-size:.88rem;">View real-time analytics and improve your team's performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section" style="background:var(--dark2);">
+  <div class="section-header">
+    <span class="section-tag">Technology</span>
+    <h2>Built With <span style="color:var(--primary)">Modern</span> Tech</h2>
+    <div class="divider"></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:900px;margin:0 auto;">
+    <span style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);color:var(--primary);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🐍 Python</span>
+    <span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--secondary);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">⚡ FastAPI</span>
+    <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);color:var(--success);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🐘 PostgreSQL</span>
+    <span style="background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.3);color:var(--accent);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🔗 SQLAlchemy</span>
+    <span style="background:rgba(255,214,0,.1);border:1px solid rgba(255,214,0,.3);color:var(--warning);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🔑 JWT Auth</span>
+    <span style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);color:var(--primary);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🌐 HTML5/CSS3</span>
+    <span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--secondary);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">☁️ Supabase</span>
+    <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);color:var(--success);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🚀 Render</span>
+    <span style="background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.3);color:var(--accent);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🔷 Netlify</span>
+    <span style="background:rgba(255,214,0,.1);border:1px solid rgba(255,214,0,.3);color:var(--warning);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;">🐙 GitHub</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+  <h2 style="font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,3vw,2rem);margin-bottom:1rem;">Ready to Level Up Your <span style="color:var(--primary)">Team?</span></h2>
+  <p style="color:var(--muted);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">Join the platform that helps esports organizations manage everything in one place.</p>
+  <a href="login.html" class="btn btn-primary btn-lg">🎮 Start Managing Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid" style="max-width:1100px;margin:0 auto;">
+    <div>
+      <div class="footer-brand">ESPORTS<span>MS</span></div>
+      <p>A complete esports team management solution built with FastAPI and PostgreSQL.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="manage.html">Manage</a>
+    </div>
+    <div class="footer-links">
+      <h4>Features</h4>
+      <a href="#">Team Management</a>
+      <a href="#">Player Profiles</a>
+      <a href="#">Match Tracking</a>
+      <a href="#">Analytics</a>
+    </div>
+    <div class="footer-links">
+      <h4>Project Info</h4>
+      <a href="#">GitHub Repository</a>
+      <a href="#">API Documentation</a>
+      <a href="#">Deployment Link</a>
+      <a href="about.html">About Developer</a>
+    </div>
+  </div>
+  <div class="footer-bottom" style="max-width:1100px;margin:0 auto;">
+    <p>© 2026 Esports Team Management System &nbsp;|&nbsp; Ilhamuddin (f2024408176) &nbsp;|&nbsp; OSSD – Y9 &nbsp;|&nbsp; UMT</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

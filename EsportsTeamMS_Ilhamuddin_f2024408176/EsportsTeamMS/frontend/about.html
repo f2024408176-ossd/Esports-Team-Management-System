@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Esports Team Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">ESPORTS<span>MS</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="manage.html">Manage</a></li>
+    <li><a href="login.html" class="nav-btn">Login</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <span class="section-tag">OSSD – Y9 Final Project</span>
+  <h1>About <span style="color:var(--primary)">EsportsMS</span></h1>
+  <p>A full-stack web application developed for the University of Management and Technology OSSD course final project.</p>
+</section>
+
+<!-- PROJECT OVERVIEW -->
+<section class="section" style="background:var(--dark2);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="grid-2" style="gap:3rem;align-items:center;">
+      <div>
+        <span class="section-tag">Problem Statement</span>
+        <h2 style="font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:700;margin:0.5rem 0 1rem;">Why EsportsMS?</h2>
+        <p style="color:var(--muted);margin-bottom:1rem;">The esports industry is growing rapidly, and professional as well as amateur gaming teams require an efficient system to manage players, tournaments, team schedules, match results, and training sessions.</p>
+        <p style="color:var(--muted);margin-bottom:1rem;">Most small esports organizations rely on spreadsheets or manual records, which leads to poor organization, data loss, and inefficient team management.</p>
+        <p style="color:var(--muted);">EsportsMS provides a centralized platform where team managers can manage everything in one place, backed by a robust FastAPI backend and PostgreSQL database hosted on Supabase.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:1rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div class="feature-icon" style="flex-shrink:0;">🎯</div>
+            <div>
+              <h3>Project Objective</h3>
+              <p>Build a complete, deployed full-stack web application that demonstrates CRUD operations, database integration, JWT auth, and API development using FastAPI + PostgreSQL.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div class="feature-icon" style="flex-shrink:0;">👥</div>
+            <div>
+              <h3>Target Users</h3>
+              <p>Esports Team Managers, Coaches, Team Owners, Professional Players, Amateur Gaming Teams, and Tournament Coordinators.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES LIST -->
+<section class="section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-header">
+      <span class="section-tag">Features</span>
+      <h2>Main <span style="color:var(--primary)">Features</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">🔐</span><h3 style="margin:0;">User Authentication</h3></div><p>JWT-based registration, secure login, and role-based access control for different user types.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">🎮</span><h3 style="margin:0;">Team Management</h3></div><p>Create teams, assign coaches, manage team information and view all team details in one place.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">👤</span><h3 style="margin:0;">Player Management</h3></div><p>Add players, update gamer profiles, assign roles (IGL/Support/Fragger), and remove players.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">🏆</span><h3 style="margin:0;">Tournament Management</h3></div><p>Add tournaments, set locations, prize pools, dates and track team's tournament participation.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">⚔️</span><h3 style="margin:0;">Match Management</h3></div><p>Schedule matches, record results (Win/Loss/Draw), view full match history with scores.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">📅</span><h3 style="margin:0;">Training Sessions</h3></div><p>Create training sessions, manage practice schedules, set focus areas and track durations.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">📊</span><h3 style="margin:0;">Analytics Dashboard</h3></div><p>Visual team win rates, match statistics, tournament performance and player metrics.</p></div>
+      <div class="card"><div style="display:flex;gap:.75rem;align-items:center;margin-bottom:.5rem;"><span style="font-size:1.3rem;">🔍</span><h3 style="margin:0;">Search & Filter</h3></div><p>Search players by name/tag, filter matches by result, and filter tournaments by date.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATABASE SCHEMA -->
+<section class="section" style="background:var(--dark2);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-header">
+      <span class="section-tag">Database Design</span>
+      <h2>PostgreSQL <span style="color:var(--secondary)">Schema</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">📋 Users</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>user_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>username</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>email</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>password</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>role</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>created_at</span><span>TIMESTAMP</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">🎮 Teams</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>team_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>team_name</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>game_title</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>coach_name</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>created_date</span><span>DATE</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">👤 Players</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>player_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>team_id</span><span style="color:var(--accent)">INTEGER FK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>player_name</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>gamer_tag</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>role</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>age</span><span>INTEGER</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>join_date</span><span>DATE</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">🏆 Tournaments</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>tournament_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>tournament_name</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>location</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>start_date</span><span>DATE</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>end_date</span><span>DATE</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>prize_pool</span><span>FLOAT</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">⚔️ Matches</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>match_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>team_id</span><span style="color:var(--accent)">INTEGER FK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>opponent_team</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>match_date</span><span>DATE</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>result</span><span>VARCHAR</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>score</span><span>VARCHAR</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:.8rem;">📅 Training Sessions</h3>
+        <div style="font-size:.82rem;color:var(--muted);">
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>session_id</span><span style="color:var(--secondary)">INTEGER PK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>team_id</span><span style="color:var(--accent)">INTEGER FK</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>session_date</span><span>DATE</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)"><span>duration_hours</span><span>INTEGER</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0"><span>focus_area</span><span>VARCHAR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT PLAN -->
+<section class="section">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-header">
+      <span class="section-tag">Deployment</span>
+      <h2>Deployment <span style="color:var(--primary)">Plan</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">🔷</div>
+        <h3>Frontend</h3>
+        <p style="color:var(--secondary);font-weight:600;margin:.5rem 0;">Netlify</p>
+        <p>Push to GitHub → Connect Netlify → Auto-deploy on every push</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">🚀</div>
+        <h3>Backend</h3>
+        <p style="color:var(--secondary);font-weight:600;margin:.5rem 0;">Render</p>
+        <p>FastAPI on Render with environment variables and auto-deploy from GitHub</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">🐘</div>
+        <h3>Database</h3>
+        <p style="color:var(--secondary);font-weight:600;margin:.5rem 0;">Supabase</p>
+        <p>PostgreSQL hosted on Supabase with connection URL via environment variables</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER INFO -->
+<section class="section" style="background:var(--dark2);">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <span class="section-tag">Developer</span>
+    <h2 style="font-family:'Orbitron',sans-serif;font-size:1.5rem;margin:.5rem 0 2rem;">Project <span style="color:var(--primary)">Info</span></h2>
+    <div class="card" style="text-align:left;">
+      <div class="grid-2" style="gap:1.5rem;">
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">STUDENT NAME</p>
+          <p style="font-weight:600;">Ilhamuddin</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">STUDENT ID</p>
+          <p style="font-weight:600;color:var(--secondary);">f2024408176</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">COURSE</p>
+          <p style="font-weight:600;">OSSD – Y9</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">UNIVERSITY</p>
+          <p style="font-weight:600;">University of Management and Technology</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">PROJECT TITLE</p>
+          <p style="font-weight:600;">Esports Team Management System</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.82rem;margin-bottom:.2rem;">SUBMISSION</p>
+          <p style="font-weight:600;">Phase 2 — June 19, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1100px;margin:0 auto;">
+    <p>© 2026 Esports Team Management System &nbsp;|&nbsp; Ilhamuddin (f2024408176) &nbsp;|&nbsp; OSSD – Y9 &nbsp;|&nbsp; UMT</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

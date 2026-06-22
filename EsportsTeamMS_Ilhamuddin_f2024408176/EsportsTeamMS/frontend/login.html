@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Register – EsportsMS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">ESPORTS<span>MS</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="manage.html">Manage</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">ESPORTS<span>MS</span></div>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;">Esports Team Management System</p>
+
+    <!-- TABS -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="loginTab" onclick="switchTab('login')">Login</button>
+      <button class="auth-tab" id="registerTab" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="loginEmail" placeholder="manager@esports.com" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" />
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;">
+        <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.85rem;">
+          <input type="checkbox" style="width:auto;background:none;border:none;" /> Remember me
+        </label>
+        <a href="#" style="font-size:.85rem;color:var(--muted);">Forgot password?</a>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="doLogin()">
+        🚀 Login to Dashboard
+      </button>
+      <div class="divider-text">or continue with</div>
+      <button class="btn btn-secondary" style="width:100%;justify-content:center;">
+        🐙 Continue with GitHub
+      </button>
+      <div class="link-text">Don't have an account? <a href="#" onclick="switchTab('register')">Register here</a></div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="registerForm" style="display:none;">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="regName" placeholder="Ilhamuddin" />
+        </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="regUsername" placeholder="ilham_gamer" />
+        </div>
+        <div class="form-group full">
+          <label>Email Address</label>
+          <input type="email" id="regEmail" placeholder="manager@esports.com" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="regPassword" placeholder="Min. 8 characters" />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" id="regConfirm" placeholder="Repeat password" />
+        </div>
+        <div class="form-group full">
+          <label>Your Role</label>
+          <select id="regRole">
+            <option value="">Select role</option>
+            <option value="manager">Team Manager</option>
+            <option value="coach">Coach</option>
+            <option value="owner">Team Owner</option>
+            <option value="coordinator">Tournament Coordinator</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="doRegister()">
+        ✅ Create Account
+      </button>
+      <div class="link-text">Already have an account? <a href="#" onclick="switchTab('login')">Login here</a></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

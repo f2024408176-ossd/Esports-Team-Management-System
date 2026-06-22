@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – EsportsMS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">ESPORTS<span>MS</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    <li><a href="manage.html">Manage</a></li>
+    <li><a href="#" onclick="logout()" class="nav-btn" style="background:var(--danger)!important;">Logout</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Main</div>
+      <a href="dashboard.html" class="sidebar-link active"><span class="icon">📊</span> Dashboard</a>
+      <a href="manage.html" class="sidebar-link"><span class="icon">🎮</span> Teams</a>
+      <a href="manage.html#players" class="sidebar-link"><span class="icon">👤</span> Players</a>
+      <a href="manage.html#tournaments" class="sidebar-link"><span class="icon">🏆</span> Tournaments</a>
+      <a href="manage.html#matches" class="sidebar-link"><span class="icon">⚔️</span> Matches</a>
+      <a href="manage.html#training" class="sidebar-link"><span class="icon">📅</span> Training</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Account</div>
+      <a href="#" class="sidebar-link"><span class="icon">👤</span> Profile</a>
+      <a href="#" class="sidebar-link"><span class="icon">⚙️</span> Settings</a>
+      <a href="#" onclick="logout()" class="sidebar-link" style="color:var(--danger)!important;"><span class="icon">🚪</span> Logout</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="page-title">📊 Dashboard</div>
+    <div class="page-subtitle">Welcome back! Here's your team overview.</div>
+
+    <!-- STAT CARDS -->
+    <div class="stat-cards" id="statCards">
+      <div class="stat-card">
+        <div class="stat-icon si-purple">🎮</div>
+        <div class="stat-info"><div class="value" id="totalTeams">—</div><div class="label">Total Teams</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon si-cyan">👤</div>
+        <div class="stat-info"><div class="value" id="totalPlayers">—</div><div class="label">Total Players</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon si-green">⚔️</div>
+        <div class="stat-info"><div class="value" id="totalMatches">—</div><div class="label">Matches Played</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon si-pink">🏆</div>
+        <div class="stat-info"><div class="value" id="totalTournaments">—</div><div class="label">Tournaments</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon si-yellow">📅</div>
+        <div class="stat-info"><div class="value" id="totalSessions">—</div><div class="label">Training Sessions</div></div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW -->
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div class="chart-card">
+        <h3>📈 Match Results (Last 6 Matches)</h3>
+        <div class="bar-chart" id="matchChart">
+          <div class="bar-group"><div class="bar" style="height:80%;background:linear-gradient(var(--success),rgba(0,230,118,.3))"></div><div class="bar-label">Match 1</div></div>
+          <div class="bar-group"><div class="bar" style="height:50%;background:linear-gradient(var(--danger),rgba(255,68,68,.3))"></div><div class="bar-label">Match 2</div></div>
+          <div class="bar-group"><div class="bar" style="height:90%;background:linear-gradient(var(--success),rgba(0,230,118,.3))"></div><div class="bar-label">Match 3</div></div>
+          <div class="bar-group"><div class="bar" style="height:70%;background:linear-gradient(var(--success),rgba(0,230,118,.3))"></div><div class="bar-label">Match 4</div></div>
+          <div class="bar-group"><div class="bar" style="height:40%;background:linear-gradient(var(--danger),rgba(255,68,68,.3))"></div><div class="bar-label">Match 5</div></div>
+          <div class="bar-group"><div class="bar" style="height:85%;background:linear-gradient(var(--success),rgba(0,230,118,.3))"></div><div class="bar-label">Match 6</div></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>🏆 Win/Loss Ratio</h3>
+        <div class="donut-wrap">
+          <div class="donut"></div>
+          <div class="donut-labels">
+            <div class="donut-label"><div class="dot" style="background:var(--success)"></div> Wins (60%)</div>
+            <div class="donut-label"><div class="dot" style="background:var(--danger)"></div> Losses (20%)</div>
+            <div class="donut-label"><div class="dot" style="background:var(--warning)"></div> Draws (20%)</div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:1rem;">Based on total matches recorded in the system.</p>
+      </div>
+    </div>
+
+    <!-- RECENT MATCHES TABLE -->
+    <div class="table-wrapper" style="margin-bottom:2rem;">
+      <div class="table-header">
+        <div class="table-title">⚔️ Recent Matches</div>
+        <a href="manage.html#matches" class="btn btn-primary btn-sm">View All</a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>Opponent</th>
+            <th>Date</th>
+            <th>Score</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody id="recentMatches">
+          <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem;">Loading matches...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- UPCOMING TRAINING -->
+    <div class="grid-2">
+      <div class="table-wrapper">
+        <div class="table-header">
+          <div class="table-title">📅 Upcoming Training</div>
+          <a href="manage.html#training" class="btn btn-primary btn-sm">Manage</a>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Team</th><th>Focus</th><th>Hours</th></tr>
+          </thead>
+          <tbody id="upcomingTraining">
+            <tr><td colspan="4" style="text-align:center;color:var(--muted);padding:1.5rem;">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-header">
+          <div class="table-title">🏆 Active Tournaments</div>
+          <a href="manage.html#tournaments" class="btn btn-primary btn-sm">View</a>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Tournament</th><th>Location</th><th>Prize Pool</th></tr>
+          </thead>
+          <tbody id="activeTournaments">
+            <tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem;">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
